@@ -53,7 +53,7 @@ Let’s Encrypt 在 2018 年推出了 wildcard 证书，申请或更新 wildcard
 
    $ certbot certonly -d *.example.com --manual --preferred-challenges dns --manual-auth-hook "/path/to/qcloud-dns.py add" --manual-cleanup-hook "/path/to/qcloud-dns.py del"
 
-如果你需要申请多域名证书（SAN 证书），输入多个 -d 参数即可，它们会合并在一张证书中。如下所示将会为 example.com 和 *.example.com 同时申请证书：
+如果你需要申请多域名证书（SAN 证书），输入多个 -d 参数即可。如下所示将会为 example.com 和 *.example.com 同时申请证书，且合并在一张证书中：
 
 .. code-block:: bash
 
