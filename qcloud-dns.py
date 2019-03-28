@@ -19,7 +19,7 @@ class Client(object):
         self.host = host
         self.uri = uri
         self.params = params
-        if sys.version_info[0] > 2:
+        if sys.version_info.major > 2:
             self.Py3 = True
             self.secret_key = bytes(self.secret_key, 'utf-8')
         else:
@@ -30,7 +30,7 @@ class Client(object):
             'Nonce': random.randint(1, 9999),
             'SecretId': self.secret_id,
             'SignatureMethod': 'HmacSHA1',
-            'Timestamp': int(time.time()), 
+            'Timestamp': int(time.time()),
         }
         params.update(self.params)
 
